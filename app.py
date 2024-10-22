@@ -9,6 +9,7 @@ from rate_limiter import init_rate_limiter
 from config import CONFIG
 from errors import bp as errors_bp
 from index import bp as index_bp
+from chatbot import bp as chatbot_bp
 
 
 def create_app():
@@ -22,6 +23,7 @@ def create_app():
 
     api.register_blueprint(index_bp)
     api.register_blueprint(errors_bp)
+    api.register_blueprint(chatbot_bp)
 
     init_cache_app(app)
     init_rate_limiter(app)
