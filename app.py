@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from flask import Flask
 from flask_cors import CORS
@@ -11,6 +12,7 @@ from errors import bp as errors_bp
 from index import bp as index_bp
 from chatbot import bp as chatbot_bp
 
+load_dotenv()
 
 def create_app():
     app = Flask(__name__)
