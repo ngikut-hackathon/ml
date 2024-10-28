@@ -3,6 +3,7 @@ from flask_smorest import Blueprint
 from flask import jsonify, request, Response, stream_with_context
 from auth import auth
 from helpers import format_docs
+from dotenv import load_dotenv
 
 from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders.csv_loader import CSVLoader
@@ -12,7 +13,7 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
-
+load_dotenv()
 
 bp = Blueprint("chatbot",
                "items",
