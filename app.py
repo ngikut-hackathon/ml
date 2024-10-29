@@ -19,7 +19,9 @@ def create_app():
     app.config.update(CONFIG)
     CORS(app, resources={
          # update to FE or production link
-         r"/*": {"origins": ["http://localhost:3000", "https://example.com"]}
+         r"/*": {"origins": ["http://localhost:5173",
+                             "https://example.com",
+                             "https://ml-singalam.ngodings.my.id"]}
          })
     api = Api(app)
 
